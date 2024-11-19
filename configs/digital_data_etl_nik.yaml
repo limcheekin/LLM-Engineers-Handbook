@@ -1,0 +1,17 @@
+settings:
+  docker:
+    parent_image: 992382797823.dkr.ecr.eu-central-1.amazonaws.com/zenml-rlwlcs:latest
+    skip_build: True
+  orchestrator.sagemaker:
+    synchronous: false
+    
+parameters:
+  user_full_name: Nik # [First Name(s)] [Last Name]
+  links:
+    # Personal Blog
+    - https://limcheekin.blogspot.com/2021/09/beyond-solidity-language.html
+    - https://limcheekin.blogspot.com/2021/07/closing-gap.html
+    - https://limcheekin.blogspot.com/2020/11/resurgence.html
+    # Medium
+    - https://medium.com/@limcheekin/unleashing-the-power-of-open-source-text-embeddings-with-open-text-embeddings-e8fc684aa2cd
+    - https://medium.com/@limcheekin/kickstart-your-dapps-development-with-the-ethereum-dapps-next-js-boiletplate-fdc4d1af22c6
