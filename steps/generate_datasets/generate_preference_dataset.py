@@ -3,7 +3,7 @@ from typing import Any
 from typing_extensions import Annotated
 from zenml import ArtifactConfig, get_step_context, step
 
-from llm_engineering.application.dataset import generation
+from llm_engineering.application.dataset import gemini_generation
 from llm_engineering.domain.dataset import DatasetType, PreferenceTrainTestSplit
 from llm_engineering.domain.prompt import GenerateDatasetSamplesPrompt
 from llm_engineering.domain.types import DataCategory
@@ -21,7 +21,7 @@ def generate_preference_dataset(
         tags=["dataset", "preference", "cleaned"],
     ),
 ]:
-    dataset_generator = generation.get_dataset_generator(DatasetType.PREFERENCE)
+    dataset_generator = gemini_generation.get_dataset_generator(DatasetType.PREFERENCE)
     datasets = dataset_generator.generate(prompts, test_size=test_split_size, mock=mock)
 
     step_context = get_step_context()

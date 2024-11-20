@@ -3,7 +3,7 @@ from typing import Any
 from typing_extensions import Annotated
 from zenml import ArtifactConfig, get_step_context, step
 
-from llm_engineering.application.dataset import generation
+from llm_engineering.application.dataset import gemini_generation
 from llm_engineering.domain.dataset import DatasetType, InstructTrainTestSplit
 from llm_engineering.domain.prompt import GenerateDatasetSamplesPrompt
 from llm_engineering.domain.types import DataCategory
@@ -21,7 +21,7 @@ def generate_intruction_dataset(
         tags=["dataset", "instruct", "cleaned"],
     ),
 ]:
-    dataset_generator = generation.get_dataset_generator(DatasetType.INSTRUCTION)
+    dataset_generator = gemini_generation.get_dataset_generator(DatasetType.INSTRUCTION)
     datasets = dataset_generator.generate(prompts, test_size=test_split_size, mock=mock)
 
     step_context = get_step_context()
