@@ -8,5 +8,5 @@ repos:
     rev: v8.18.2
     hooks:
       - id: gitleaks
-        args: ["--gitleaks-ignore-path", ".gitleaksignore"]
+        args: ["gi", ".gitleaksignore"]
 
