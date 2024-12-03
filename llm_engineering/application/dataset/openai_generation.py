@@ -191,7 +191,7 @@ Do not add any extra characters and provide your response in JSON format with th
 ]
 
 Extract:
-{extract}
+{{extract}}
 """
 
     @classmethod
