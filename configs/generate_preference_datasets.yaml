@@ -9,5 +9,6 @@ parameters:
   test_split_size: 0.05
   dataset_type: "preference"
   push_to_huggingface: true
-  dataset_id: pauliusztin/llmtwin-dpo
+  private: true
+  dataset_id: limcheekin/llmtwin-dpo
   mock: false

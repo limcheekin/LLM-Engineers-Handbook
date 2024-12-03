@@ -9,6 +9,7 @@ def generate_datasets(
     dataset_type: DatasetType = DatasetType.INSTRUCTION,
     test_split_size: float = 0.1,
     push_to_huggingface: bool = False,
+    private: bool = False,
     dataset_id: str | None = None,
     mock: bool = False,
     wait_for: str | list[str] | None = None,
@@ -23,4 +24,4 @@ def generate_datasets(
         raise ValueError(f"Invalid dataset type: {dataset_type}")
 
     if push_to_huggingface:
-        cd_steps.push_to_huggingface(dataset=dataset, dataset_id=dataset_id)
+        cd_steps.push_to_huggingface(dataset=dataset, dataset_id=dataset_id, private=private)

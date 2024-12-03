@@ -10,6 +10,7 @@ from llm_engineering.settings import settings
 def push_to_huggingface(
     dataset: Annotated[InstructTrainTestSplit | PreferenceTrainTestSplit, "dataset_split"],
     dataset_id: Annotated[str, "dataset_id"],
+    private: Annotated[bool, "private"],
 ) -> None:
     assert dataset_id is not None, "Dataset id must be provided for pushing to Huggingface"
     assert (
@@ -19,4 +20,4 @@ def push_to_huggingface(
     logger.info(f"Pushing dataset {dataset_id} to Hugging Face.")
 
     huggingface_dataset = dataset.to_huggingface(flatten=True)
-    huggingface_dataset.push_to_hub(dataset_id, token=settings.HUGGINGFACE_ACCESS_TOKEN)
+    huggingface_dataset.push_to_hub(dataset_id, token=settings.HUGGINGFACE_ACCESS_TOKEN, private=private)
